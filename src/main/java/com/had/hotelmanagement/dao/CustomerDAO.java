@@ -1,5 +1,5 @@
 package com.had.hotelmanagement.dao;
 
-public class HomeDao {
+public class CustomerDAO {
 
 }

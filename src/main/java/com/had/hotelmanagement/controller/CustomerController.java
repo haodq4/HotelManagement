@@ -1,5 +1,5 @@
 package com.had.hotelmanagement.controller;
 
-public class HomeController {
+public class CustomerController {
 
 }
