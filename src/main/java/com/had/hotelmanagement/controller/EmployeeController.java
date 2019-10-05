@@ -39,14 +39,14 @@ public class EmployeeController {
 		return "employee-save";
 	}
 
-	@RequestMapping("/employee-view/{idkh}")
+	@RequestMapping("/employee-view/{id}")
 	public String viewEmployee(@PathVariable int id, Model model) {
 		EmployeeEntity employee = employeeService.findByIdhd(id);
 		model.addAttribute("employee", employee);
 		return "employee-view";
 	}
 
-	@RequestMapping("/employee-update/{idkh}")
+	@RequestMapping("/employee-update/{id}")
 	public String updateCustomer(@PathVariable int id, Model model) {
 		EmployeeEntity employee = employeeService.findByIdhd(id);
 		model.addAttribute("employee", employee);
@@ -88,7 +88,7 @@ public class EmployeeController {
 		return "employee-list";
 	}
 
-	@RequestMapping("/employeeDelete/{idkh}")
+	@RequestMapping("/employeeDelete/{id}")
 	public String doDeleteCustomer(@PathVariable int id, Model model) {
 		employeeService.delete(id);
 		model.addAttribute("listEmployee", employeeService.findAll());
@@ -97,7 +97,7 @@ public class EmployeeController {
 
 	@RequestMapping(value = "/employee-search")
 	public String search(String name, Model model) {
-		List<EmployeeEntity> employee =employeeService.searchkhachhang(name);
+		List<EmployeeEntity> employee =employeeService.searchEmployee(name);
 		model.addAttribute("search", employee);
 		return "employee-search";
 	}

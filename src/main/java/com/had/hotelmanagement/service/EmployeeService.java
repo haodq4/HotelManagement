@@ -40,7 +40,7 @@ public class EmployeeService {
 		employeeDAO.delete(id);
 	}
 	public List<EmployeeEntity> searchEmployee(String name) {
-		return employeeDAO.findkhachhangten(name);
+		return employeeDAO.findEmployee(name);
 	}
 
 }
