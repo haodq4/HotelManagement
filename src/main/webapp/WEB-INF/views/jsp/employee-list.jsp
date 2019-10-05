@@ -92,9 +92,6 @@
 	color: white;
 }
 
-#wrapper {
-	background-color: #f1f2f3;
-}
 
 #chinhbutton a {
 	color: white;
