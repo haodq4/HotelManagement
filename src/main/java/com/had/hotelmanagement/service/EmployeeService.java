@@ -39,7 +39,7 @@ public class EmployeeService {
 		// validate business
 		employeeDAO.delete(id);
 	}
-	public List<EmployeeEntity> searchkhachhang(String name) {
+	public List<EmployeeEntity> searchEmployee(String name) {
 		return employeeDAO.findkhachhangten(name);
 	}
 

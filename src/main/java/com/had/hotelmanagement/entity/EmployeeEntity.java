@@ -14,7 +14,7 @@ public class EmployeeEntity {
 	private Double salary;
 	public EmployeeEntity() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	

@@ -19,7 +19,6 @@ public class EmployeeMapper implements RowMapper<EmployeeEntity> {
 		employee.setAddress(rs.getString("address"));
 		employee.setImage(rs.getString("image"));
 		employee.setSalary(rs.getDouble("salary"));
-		
 		return employee;
 	}
 

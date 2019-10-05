@@ -54,7 +54,7 @@ public class EmployeeController {
 	}
 
 	@RequestMapping(value = "/saveEmployee", method = RequestMethod.POST)
-	public String doSaveCustomer(ModelMap model, HttpServletRequest request,
+	public String doSaveEmployee(ModelMap model, HttpServletRequest request,
 			@ModelAttribute("Employee") EmployeeEntity employee, @RequestParam("uploadImg") MultipartFile image) {
 		{
 			if (image.isEmpty()) {
@@ -82,13 +82,13 @@ public class EmployeeController {
 
 	
 	@RequestMapping("/updateEmployee")
-	public String doUpdateHoaDon(@ModelAttribute("Employee") EmployeeEntity employee, Model model) {
+	public String doUpdateEmployee(@ModelAttribute("Employee") EmployeeEntity employee, Model model) {
 		employeeService.update(employee);
 		model.addAttribute("listEmployee", employeeService.findAll());
 		return "employee-list";
 	}
 
-	@RequestMapping("/khachHangDelete/{idkh}")
+	@RequestMapping("/employeeDelete/{idkh}")
 	public String doDeleteCustomer(@PathVariable int id, Model model) {
 		employeeService.delete(id);
 		model.addAttribute("listEmployee", employeeService.findAll());
