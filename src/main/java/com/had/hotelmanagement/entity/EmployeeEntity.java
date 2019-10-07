@@ -3,10 +3,10 @@ package com.had.hotelmanagement.entity;
 import java.util.Date;
 
 public class EmployeeEntity {
-	private Integer id;
+	private int employee_id;
 	private String name;
 	private Date birthday;
-	private int governmentid;
+	private int  governmanetid;
 	private String phone;
 	private String email;
 	private String address;
@@ -20,18 +20,18 @@ public class EmployeeEntity {
 
 	@Override
 	public String toString() {
-		return "EmployeeEntity [id=" + id + ", name=" + name + ", birthday=" + birthday + ", governmentid="
-				+ governmentid + ", phone=" + phone + ", email=" + email + ", address=" + address + ", image=" + image
-				+ ", salary=" + salary + "]";
+		return "EmployeeEntity [employee_id=" + employee_id + ", name=" + name + ", birthday=" + birthday
+				+ ", governmanetid=" + governmanetid + ", phone=" + phone + ", email=" + email + ", address=" + address
+				+ ", image=" + image + ", salary=" + salary + "]";
 	}
 
-	public EmployeeEntity(Integer id, String name, Date birthday, int governmentid, String phone, String email,
+	public EmployeeEntity(int employee_id, String name, Date birthday, int governmanetid, String phone, String email,
 			String address, String image, Double salary) {
 		super();
-		this.id = id;
+		this.employee_id = employee_id;
 		this.name = name;
 		this.birthday = birthday;
-		this.governmentid = governmentid;
+		this.governmanetid = governmanetid;
 		this.phone = phone;
 		this.email = email;
 		this.address = address;
@@ -39,12 +39,16 @@ public class EmployeeEntity {
 		this.salary = salary;
 	}
 
-	public Integer getId() {
-		return id;
+	
+
+
+
+	public int getEmployee_id() {
+		return employee_id;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setEmployee_id(int employee_id) {
+		this.employee_id = employee_id;
 	}
 
 	public String getName() {
@@ -63,12 +67,12 @@ public class EmployeeEntity {
 		this.birthday = birthday;
 	}
 
-	public int getGovernmentid() {
-		return governmentid;
+	public int getGovernmanetid() {
+		return governmanetid;
 	}
 
-	public void setGovernmentid(int governmentid) {
-		this.governmentid = governmentid;
+	public void setGovernmanetid(int governmanetid) {
+		this.governmanetid = governmanetid;
 	}
 
 	public String getPhone() {
@@ -110,5 +114,9 @@ public class EmployeeEntity {
 	public void setSalary(Double salary) {
 		this.salary = salary;
 	}
+	
+	
+
+	
 
 }
