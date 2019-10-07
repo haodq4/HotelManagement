@@ -27,29 +27,29 @@ public class CustomerDAO {
 //			"OR KH.ten LIKE \"%?%\"";
 
 	public void save(Customer customer) {
-		String sql = "INSERT INTO CUSTOMER (CUSTOMER_NAME, GOVERNMENT_ID, CUSTOMER_ADDRESS, CUSTOMER_PHONE, CUSTOMER_EMAIL, CUSTOMER_IMAGE, CC_NUMBER) VALUES (?,?,?,?,?,?,?)";
-		jdbcTemplate.update(sql, customer.getCustomername(), customer.getGovernmentid(),customer.getCustomeraddress(),
-				customer.getCustomerphone(),customer.getCustomeremail(),customer.getCustomerimage(),customer.getCcnumber());
+		String sql = "INSERT INTO customer (name, governmentid, address, phone, email, image, cc_number) VALUES (?,?,?,?,?,?,?)";
+		jdbcTemplate.update(sql, customer.getName(), customer.getGovernmentid(),customer.getAddress(),
+				customer.getPhone(),customer.getEmail(),customer.getImage(),customer.getCcnumber());
 	}
 
 	public void delete(int customerid) {
-		String sql = "DELETE FROM CUSTOMER WHERE CUSTOMER_ID = " + customerid;
+		String sql = "DELETE FROM customer WHERE customer_id = " + customerid;
 		jdbcTemplate.update(sql);
 	}
 	
-//	public void update(Customer customer) {
-//		String sql = "UPDATE HoaDon SET idsp = ? , soluong = ? , ngaynhap = ? , idnv = ? , idkh = ? , ghichu = ? WHERE idhd = ? ";
-//		jdbcTemplate.update(sql, hoadon.getIdsp(), hoadon.getSoluong(), hoadon.getNgaynhap(),
-//				hoadon.getIdnv(),hoadon.getIdkh(),hoadon.getGhichu(), hoadon.getIdhd());
-//	}
-//
-//	public HoaDon findById(int idhd) {
-//		String sql = "SELECT * FROM HoaDon WHERE idhd = ?";
-//		return jdbcTemplate.queryForObject(sql, new HoaDonMapper(), idhd);
-//	}
+	public void update(Customer customer) {
+		String sql = "UPDATE customer SET name = ? , governmentid = ? , address = ? , phone = ? , email = ? , image = ? , cc_number = ? WHERE customer_id = ? ";
+		jdbcTemplate.update(sql, customer.getName(), customer.getGovernmentid(), customer.getAddress(),
+				customer.getPhone(),customer.getEmail(),customer.getImage(), customer.getCcnumber(), customer.getCustomerid());
+	}
+
+	public Customer findById(int customerid) {
+		String sql = "SELECT * FROM customer WHERE customer_id = ?";
+		return jdbcTemplate.queryForObject(sql, new CustomerMapper(), customerid);
+	}
 
 	public List<Customer> findAll() {
-		String sql = "SELECT * FROM CUSTOMER";
+		String sql = "SELECT * FROM customer";
 		return jdbcTemplate.query(sql, new CustomerMapper());
 	}
 	

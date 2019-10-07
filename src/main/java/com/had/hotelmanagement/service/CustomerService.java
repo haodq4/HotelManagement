@@ -35,24 +35,24 @@ public class CustomerService {
 //		return nhanVienDAO.findAll();
 //	}
 
-//	public HoaDon findByIdhd(int idhd) {
-//		return hoaDonDAO.findById(idhd);
-//	}
-//	
+	public Customer findById(int customerid) {
+		return customerDAO.findById(customerid);
+	}
 	
-//	public void save(HoaDon hoadon){
-//		// validate business
-//		hoaDonDAO.save(hoadon);
-//	}
+	
+	public void save(Customer customer){
+		// validate business
+		customerDAO.save(customer);
+	}
 
-//	public void update(HoaDon hoadon){
-//		// validate business
-//		hoaDonDAO.update(hoadon);
-//	}
+	public void update(Customer customer){
+		// validate business
+		customerDAO.update(customer);
+	}
 	
-//	public void delete(int idhd){
-//		// validate business
-//		hoaDonDAO.delete(idhd);
-//	}
+	public void delete(int customerid){
+		// validate business
+		customerDAO.delete(customerid);
+	}
 
 }
