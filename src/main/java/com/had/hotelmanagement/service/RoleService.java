@@ -18,8 +18,8 @@ public class RoleService {
 		return dao.findAll();
 	}
 
-	public Role findByIdhd(int idrole) {
-		return dao.findById(idrole);
+	public Role findByIdhd(int role_id) {
+		return dao.findById(role_id);
 	}
 	
 	public void save(Role role){

@@ -14,48 +14,50 @@ import com.had.hotelmanagement.entity.Role;
 import com.had.hotelmanagement.service.RoleService;
 
 
+
+
 @Controller
 @RequestMapping(value = "")
 public class RoleController {
 	@Autowired
 	private RoleService sevice;
 
-	@RequestMapping(value = { "/", "/list-role" }, method = RequestMethod.GET)
+	@RequestMapping( value = { "/","/list-role" } , method = RequestMethod.GET)
 	public String listrole(Model model) {
 		model.addAttribute("list", sevice.findAll());
 		return "list-role";
 	}
 	@RequestMapping("/save-role")
 	public String insertRole(Model model) {
-		model.addAttribute("save", new Role());
+		model.addAttribute("role", new Role());
 		return "save-role";
 	}
 
-	@RequestMapping("/update-role/{ROLE_ID}")
-	public String updateRole(@PathVariable int ROLE_ID, Model model) {
-		Role role = sevice.findByIdhd(ROLE_ID);
-		model.addAttribute("update", role);
-		return "update-role";
-	}
 	@RequestMapping(value = "/saverole", method = RequestMethod.GET)
-	public String doSaveRole(ModelMap model, HttpServletRequest request, @ModelAttribute("save") Role role) {
+	public String doSaveRole(ModelMap model, HttpServletRequest request, @ModelAttribute("role") Role role) {
 		sevice.save(role);
 		model.addAttribute("list", sevice.findAll());
 		model.addAttribute("messageSuccess", "Thành Công");
 		return "list-role";
 	}
 
-	@RequestMapping(value = "/updaterole", method = RequestMethod.PUT)
-	public String doUpdaterole(ModelMap model, HttpServletRequest request, @ModelAttribute("update") Role role) {
+	@RequestMapping("/update-role/{role_id}")
+	public String updatenrole(@PathVariable int role_id, Model model) {
+		Role role = sevice.findByIdhd(role_id);
+		model.addAttribute("role", role);
+		return "update-role";
+	}
+	@RequestMapping("/updaterole")
+	public String doUpdaterole(Model model,@ModelAttribute("role") Role role) {
 		sevice.update(role);
-		model.addAttribute("messageSuccess", "Thành Công");
 		model.addAttribute("list", sevice.findAll());
 		return "list-role";
+
 	}
 
-	@RequestMapping("/roleDelete/{ROLE_ID}")
-	public String doDeleterole(@PathVariable int ROLE_ID, Model model) {
-		sevice.delete(ROLE_ID);
+	@RequestMapping("/roleDelete/{role_id}")
+	public String doDeleterole(@PathVariable int role_id, Model model) {
+		sevice.delete(role_id);
 		model.addAttribute("list", sevice.findAll());
 		return "list-role";
 	}
