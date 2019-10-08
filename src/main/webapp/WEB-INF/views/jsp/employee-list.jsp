@@ -34,7 +34,7 @@
 		<c:if test="${not empty listEmployee}">
 			<c:forEach var="employee" items="${listEmployee}">
 				<tr class="text-center">
-					<td>${employee.employee_id}</td>
+					<td>${employee.employeeid}</td>
 					<td>${employee.name}</td>
 					<td>${employee.birthday}</td>
 					<td>${employee.governmentid}</td>
@@ -45,11 +45,11 @@
 					<td>${employee.salary}</td>
 					<td><button>
 							<i class="fa fa-pencil-square-o" aria-hidden="true"></i><a
-								href="${urlView}/${employee.employee_id}"> Xem</a>
+								href="${urlView}/${employee.employeeid}"> Xem</a>
 						</button></td>
 					<td><button>
 							<i class="fa fa-trash" aria-hidden="true"></i><a
-								href="${urlDelete}/${employee.employee_id}"> Xóa</a>
+								href="${urlDelete}/${employee.employeeid}"> Xóa</a>
 						</button></td>
 				</tr>
 			</c:forEach>

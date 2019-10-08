@@ -11,7 +11,7 @@ public class EmployeeMapper implements RowMapper<EmployeeEntity> {
 
 	public EmployeeEntity mapRow(ResultSet rs, int rowNum) throws SQLException {
 		EmployeeEntity employee = new EmployeeEntity();
-		employee.setEmployee_id(rs.getInt("employee_id"));
+		employee.setEmployeeid(rs.getInt("employeeid"));
 		employee.setName(rs.getString("name"));
 		employee.setBirthday(rs.getDate("birthday"));
 		employee.setGovernmanetid(rs.getInt("governmentid"));

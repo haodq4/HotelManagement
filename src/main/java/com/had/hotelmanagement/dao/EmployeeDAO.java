@@ -25,19 +25,19 @@ public class EmployeeDAO {
 	}
 
 	public void delete(int id) {
-		String sql = "DELETE FROM employee WHERE employee_id = " + id;
+		String sql = "DELETE FROM employee WHERE employeeid = " + id;
 		jdbcTemplate.update(sql);
 	}
 	
 	public void update(EmployeeEntity employee) {
 		String sql = "UPDATE employee SET  name = ?, birthday=? , governmentid=?, phone=?, email=?"
-				+ "address=?,image=?,salary=? WHERE employee_id = ? ";
+				+ "address=?,image=?,salary=? WHERE employeeid = ? ";
 		jdbcTemplate.update(sql, employee.getName(),employee.getBirthday(),
 				employee.getGovernmanetid(),employee.getPhone(),employee.getEmail(),employee.getAddress(),employee.getImage(),employee.getSalary());
 	}
 
 	public EmployeeEntity findById(int id) {
-		String sql = "SELECT * FROM employee WHERE EMPLOYEE_ID = ?";
+		String sql = "SELECT * FROM employee WHERE employeeid = ?";
 		return jdbcTemplate.queryForObject(sql, new EmployeeMapper(), id);
 	}
 

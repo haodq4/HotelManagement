@@ -21,8 +21,8 @@ public class EmployeeService {
 		return employeeDAO.findAll();
 	}
 
-	public EmployeeEntity findByIdEmployee(int employee_id) {
-		return employeeDAO.findById(employee_id);
+	public EmployeeEntity findByIdEmployee(int employeeid) {
+		return employeeDAO.findById(employeeid);
 	}
 	
 	public void save(EmployeeEntity employee){
@@ -35,9 +35,9 @@ public class EmployeeService {
 		employeeDAO.update(employee);
 	}
 	
-	public void delete(int employee_id){
+	public void delete(int employeeid){
 		// validate business
-		employeeDAO.delete(employee_id);
+		employeeDAO.delete(employeeid);
 	}
 	public List<EmployeeEntity> searchEmployee(String name) {
 		return employeeDAO.findEmployee(name);
