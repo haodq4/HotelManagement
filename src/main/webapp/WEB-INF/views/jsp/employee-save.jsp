@@ -44,7 +44,7 @@
 		<br />
 		<br />
 		<label>Government ID:</label>
-		<form:input type="text" path="governmentid" />
+		<form:input type="text" path="government" />
 		<br />
 		<br />
 		<label>Phone:</label>

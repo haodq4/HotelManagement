@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.had.hotelmanagement.dao.EmployeeDAO;
-import com.had.hotelmanagement.entity.EmployeeEntity;
+import com.had.hotelmanagement.entity.Employee;
 
 
 
@@ -17,20 +17,20 @@ public class EmployeeService {
 	@Autowired
 	private EmployeeDAO employeeDAO;
 	
-	public List<EmployeeEntity> findAll() {
+	public List<Employee> findAll() {
 		return employeeDAO.findAll();
 	}
 
-	public EmployeeEntity findByIdEmployee(int employeeid) {
+	public Employee findByIdEmployee(int employeeid) {
 		return employeeDAO.findById(employeeid);
 	}
 	
-	public void save(EmployeeEntity employee){
+	public void save(Employee employee){
 		// validate business
 		employeeDAO.save(employee);
 	}
 
-	public void update(EmployeeEntity employee){
+	public void update(Employee employee){
 		// validate business
 		employeeDAO.update(employee);
 	}
@@ -39,7 +39,7 @@ public class EmployeeService {
 		// validate business
 		employeeDAO.delete(employeeid);
 	}
-	public List<EmployeeEntity> searchEmployee(String name) {
+	public List<Employee> searchEmployee(String name) {
 		return employeeDAO.findEmployee(name);
 	}
 

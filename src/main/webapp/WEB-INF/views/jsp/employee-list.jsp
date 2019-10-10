@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
 <html>
@@ -37,7 +38,7 @@
 					<td>${employee.employeeid}</td>
 					<td>${employee.name}</td>
 					<td>${employee.birthday}</td>
-					<td>${employee.governmentid}</td>
+				    <td>${employee.government }</td>  
 					<td>${employee.phone}</td>
 					<td>${employee.email}</td>
 					<td>${employee.address}</td>
