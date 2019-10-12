@@ -12,7 +12,7 @@ public class Customer {
     @GeneratedValue
     private int customerid;
     private String name;
-    private int governmentid;
+    private String governmentid;
     private String address;
     private String phone;
     private String email;
@@ -22,7 +22,7 @@ public class Customer {
 	public Customer() {
 	}
 
-	public Customer(int customerid, String name, int governmentid, String address, String phone, String email,
+	public Customer(int customerid, String name, String governmentid, String address, String phone, String email,
 			String image, int ccnumber) {
 		super();
 		this.customerid = customerid;
@@ -58,11 +58,11 @@ public class Customer {
 		this.name = name;
 	}
 
-	public int getGovernmentid() {
+	public String getGovernmentid() {
 		return governmentid;
 	}
 
-	public void setGovernmentid(int governmentid) {
+	public void setGovernmentid(String governmentid) {
 		this.governmentid = governmentid;
 	}
 
