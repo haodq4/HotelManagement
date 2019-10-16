@@ -18,22 +18,7 @@ public class CustomerService {
 	public List<Customer> findAll() {
 		return customerDAO.findAll();
 	}
-	
-//	public List<KhachHang> findHoaDon(String tenkh) {
-//		return hoaDonDAO.findHoaDon(tenkh);
-//	}
-	
-//	public List<KhachHang> listKhachHang() {
-//		return khachHangDAO.findAll();
-//	}
-//	
-//	public List<SanPham> listSanPham() {
-//		return sanPhamDAO.findAll();
-//	}
-//	
-//	public List<NhanVien> listNhanVien() {
-//		return nhanVienDAO.findAll();
-//	}
+
 
 	public Customer findById(int customerid) {
 		return customerDAO.findById(customerid);

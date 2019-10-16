@@ -26,7 +26,7 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerService;
 	
-	@RequestMapping(value={"", "/customerList"},method = RequestMethod.GET)
+	@RequestMapping(value={"/customer-list"},method = RequestMethod.GET)
 	public String listCustomer(Model model) {
 		model.addAttribute("listCustomer", customerService.findAll());
 		return "customer-list";
@@ -53,7 +53,6 @@ public class CustomerController {
 
 	@RequestMapping("/saveCustomer")
 	public String doSaveCustomer(Customer customer , Model model) {
-//	public String doSaveHoaDon(ModelMap model,@Validated @ModelAttribute("hoadon") HoaDon hoadon,BindingResult errors) {
 		customerService.save(customer);
 		model.addAttribute("listCustomer", customerService.findAll());
 		return "customer-list";

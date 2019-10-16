@@ -33,18 +33,18 @@
 	<br />
 	<table>
 
-		<table>
-		<tr>
-			<th>customerid</th>
-			<th>name</th>
-			<th>governmentid</th>
-			<th>address</th>
-			<th>phone</th>
-			<th>email</th>
-			<th>image</th>
-			<th>ccnumber</th>
-			<th></th>
-		</tr>
+		<table border="1px">
+			<tr>
+				<th>customerid</th>
+				<th>name</th>
+				<th>governmentid</th>
+				<th>address</th>
+				<th>phone</th>
+				<th>email</th>
+				<th>image</th>
+				<th>ccnumber</th>
+				<th></th>
+			</tr>
 			<c:if test="${not empty listCustomer}">
 				<c:forEach var="customer" items="${listCustomer}">
 					<tr class="text-center">
@@ -56,15 +56,14 @@
 						<td>${customer.email}</td>
 						<td>${customer.image}</td>
 						<td>${customer.ccnumber}</td>
-						<td><img src="/resources/image/${employee.image}" width="120"></td>
-						<td>${employee.salary}</td>
 						<td><button>
-								<i class="fa fa-pencil-square-o" aria-hidden="true"></i><a
-									href="${urlView}/${employee.employeeid}"> Xem</a>
+								<a href="${urlView}/${customer.customerid}">View</a>
+							</button></td>
+							<td><button>
+								<a href="${urlUpdate}/${customer.customerid}">Update</a>
 							</button></td>
 						<td><button>
-								<i class="fa fa-trash" aria-hidden="true"></i><a
-									href="${urlDelete}/${employee.employeeid}"> Xóa</a>
+								<a href="${urlDelete}/${customer.customerid}">Delete</a>
 							</button></td>
 					</tr>
 				</c:forEach>
