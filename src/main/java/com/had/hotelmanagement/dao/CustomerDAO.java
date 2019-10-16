@@ -17,34 +17,26 @@ public class CustomerDAO {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
-//	final String SQL_FIND_CUSTOMER = "SELECT CM.CUSTOMER_ID, CM.CUSTOMER_NAME, CM.GOVERNMENT_ID, CM.CUSTOMER_ADDRESS, CM.CUSTOMER_PHONE, CM.CUSTOMER_EMAIL, CM.CUSTOMER_IMAGE, CM.CC_NUMBER   \r\n" + 
-//			"FROM CUSTOMER AS CM \r\n" + 
-//			"RIGHT JOIN sanpham AS SP ON HD.idsp = SP.idsp\r\n" + 
-//			"RIGHT JOIN nhanvien AS NV ON HD.idnv = NV.idnv\r\n" + 
-//			"RIGHT JOIN khachhang AS KH ON HD.idkh = KH.idkh\r\n" + 
-//			"WHERE SP.tensp LIKE \"%?%\"\r\n" + 
-//			"OR NV.tennv LIKE \"%?%\"\r\n" + 
-//			"OR KH.ten LIKE \"%?%\"";
 
 	public void save(Customer customer) {
-		String sql = "INSERT INTO customer (name, governmentid, address, phone, email, image, cc_number) VALUES (?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO customer (name, governmentid, address, phone, email, image, ccnumber) VALUES (?,?,?,?,?,?,?)";
 		jdbcTemplate.update(sql, customer.getName(), customer.getGovernmentid(),customer.getAddress(),
 				customer.getPhone(),customer.getEmail(),customer.getImage(),customer.getCcnumber());
 	}
 
 	public void delete(int customerid) {
-		String sql = "DELETE FROM customer WHERE customer_id = " + customerid;
+		String sql = "DELETE FROM customer WHERE customerid = " + customerid;
 		jdbcTemplate.update(sql);
 	}
 	
 	public void update(Customer customer) {
-		String sql = "UPDATE customer SET name = ? , governmentid = ? , address = ? , phone = ? , email = ? , image = ? , cc_number = ? WHERE customer_id = ? ";
+		String sql = "UPDATE customer SET name = ? , governmentid = ? , address = ? , phone = ? , email = ? , image = ? , ccnumber = ? WHERE customerid = ? ";
 		jdbcTemplate.update(sql, customer.getName(), customer.getGovernmentid(), customer.getAddress(),
 				customer.getPhone(),customer.getEmail(),customer.getImage(), customer.getCcnumber(), customer.getCustomerid());
 	}
 
 	public Customer findById(int customerid) {
-		String sql = "SELECT * FROM customer WHERE customer_id = ?";
+		String sql = "SELECT * FROM customer WHERE customerid = ?";
 		return jdbcTemplate.queryForObject(sql, new CustomerMapper(), customerid);
 	}
 
