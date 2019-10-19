@@ -54,9 +54,9 @@
 						<td>${reservation.expectedroom}</td>
 						<td>${reservation.isdeposit}</td>
 						<td>${reservation.reservationstatus}</td>
-						<td><button>
+						<%-- <td><button>
 								<a href="${urlView}/${reservation.reservationid}">View</a>
-							</button></td>
+							</button></td> --%>
 							<td><button>
 								<a href="${urlUpdate}/${reservation.reservationid}">Update</a>
 							</button></td>

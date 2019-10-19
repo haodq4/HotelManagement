@@ -22,7 +22,7 @@ public class RoleController {
 	@Autowired
 	private RoleService sevice;
 
-	@RequestMapping( value = { "/","/list-role" } , method = RequestMethod.GET)
+	@RequestMapping( value = {"/list-role" } , method = RequestMethod.GET)
 	public String listrole(Model model) {
 		model.addAttribute("list", sevice.findAll());
 		return "list-role";

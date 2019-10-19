@@ -31,6 +31,15 @@ public class Reservation {
 		this.isdeposit = isdeposit;
 		this.reservationstatus = reservationstatus;
 	}
+	
+	
+
+	@Override
+	public String toString() {
+		return "Reservation [reservationid=" + reservationid + ", customerid=" + customerid + ", roomtypeid="
+				+ roomtypeid + ", expectedcheckdate=" + expectedcheckdate + ", expectedroom=" + expectedroom
+				+ ", isdeposit=" + isdeposit + ", reservationstatus=" + reservationstatus + "]";
+	}
 
 	public int getReservationid() {
 		return reservationid;
