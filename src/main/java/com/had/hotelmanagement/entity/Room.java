@@ -1,5 +1,5 @@
 package com.had.hotelmanagement.entity;
-
+///////
 public class Room {
 	private int roomid;
 	private int roomtypeid;
