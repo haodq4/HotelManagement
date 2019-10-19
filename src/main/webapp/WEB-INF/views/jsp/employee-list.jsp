@@ -9,28 +9,34 @@
 	<c:url value="/employee-save" var="urlSave" />
 	<c:url value="/employee-view/" var="urlView" />
 	<c:url value="/employee-update/" var="urlUpdate" />
-	<c:url value="/employeeDelete/" var="urlDelete" />
+	<c:url value="/employee-delete/" var="urlDelete" />
 
-
-	<script>
-		$("#menu-toggle").click(function(e) {
-			e.preventDefault();
-			$("#wrapper").toggleClass("menuDisplayed");
-		});
-	</script>
 	<div>DANH SÁCH THÔNG TIN KHÁCH HÀNG</div>
-	<form:form action="/HotelManagement/employee-search" modelAttribute="employee" method="get">
-
-		<td><input type="search" name="name" placeholder="Tìm kiếm ..."></td>
-		<td><button type="submit">Tìm kiếm</button></td>
-		<td><button>
-				<a href="${urlSave}"> Trở về trang thêm mới</a>
-			</button></td>
-
-	</form:form>
+		<a href="${urlSave}">Thêm mới khách hàng</a>
+	<br />
+	<form class="form-inline" action="employee-search" method="get">
+		<input class="form-control mr-sm-2" type="search" name="name"
+			placeholder="Search by name ..." />
+		<button class="btn btn-primary" type="submit">
+			<i class="fa fa-search"></i> Search
+		</button>
+	</form>
 
 	<br />
-	<table>
+	<table border="1" style="border-collapse: collapse;">
+	<tr> 
+	<td>Mã Nhân Viên</td>
+	<td>Họ Tên</td>
+	<td>Ngày Sinh</td>
+	<td>Số CMND</td>
+	<td>Số ĐT</td>
+	<td>Email</td>
+	<td>Địa Chỉ</td>
+	<td>Hình</td>
+	<td>Lương</td>
+	<td></td>
+	<td></td>
+	</tr>
 
 		<c:if test="${not empty listEmployee}">
 			<c:forEach var="employee" items="${listEmployee}">
@@ -42,15 +48,13 @@
 					<td>${employee.phone}</td>
 					<td>${employee.email}</td>
 					<td>${employee.address}</td>
-					<td><img src="/resources/image/${employee.image}" width="120"></td>
+					<td><img src="/resources/image/${employee.image}" width="100px"></td>
 					<td>${employee.salary}</td>
 					<td><button>
-							<i class="fa fa-pencil-square-o" aria-hidden="true"></i><a
-								href="${urlView}/${employee.employeeid}"> Xem</a>
-						</button></td>
-					<td><button>
-							<i class="fa fa-trash" aria-hidden="true"></i><a
-								href="${urlDelete}/${employee.employeeid}"> Xóa</a>
+								<a href="${urlUpdate}/${employee.employeeid}">Update</a>
+							</button></td>
+					    <td><button>
+						<a href="${urlDelete}/${employee.employeeid}"> Xóa</a>
 						</button></td>
 				</tr>
 			</c:forEach>
