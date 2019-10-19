@@ -18,7 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.had.hotelmanagement.entity.Employee;
 import com.had.hotelmanagement.service.EmployeeService;
-//////////////////
+//////////////
 @Controller
 @RequestMapping(value = "")
 public class EmployeeController {
